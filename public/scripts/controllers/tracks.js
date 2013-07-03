@@ -8,6 +8,14 @@ function tracksCtrl($scope, $http, $resource, $dialog) {
 
     $scope.tracks = tracksResource.query();
 
+    $scope.countries = [
+        {code: 'BE', label:'Belgium'},
+        {code: 'FR', label:'France'},
+        {code: 'NL', label:'Netherlands'},
+        {code: 'DE', label:'Germany'},
+        {code: 'UK', label:'United Kingdom'},
+    ];
+
     $scope.selectTrack = function(trackId) {
         $scope.track = tracksResource.get({_id: trackId});
     }
