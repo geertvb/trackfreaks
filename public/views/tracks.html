@@ -1,0 +1,27 @@
+<table>
+    <tr ng-repeat='track in tracks | orderBy:predicate'>
+        <td ng-click="selectTrack(track._id)">{{track.name}}</td>
+        <!--<td ng-click="selectTrack(track._id)">{{track.countryId}}</td>-->
+        <td><img width="26" height="17" src="/images/countries/{{ track.countryId }}_flag.gif"></td>
+        <td>{{ track.length }}</td>
+        <td>{{ track.width }}</td>
+        <td>{{ track.turns }}</td>
+        <td>{{ track.lat | number:4 }}</td>
+        <td>{{ track.lng | number:4 }}</td>
+        <td><button ng-click="deleteTrack(track._id)" class="btn btn-mini">Delete</button></td>
+    </tr>
+</table>
+
+<div>
+    <form novalidate class="simple-form">
+        Name: <input type="text" ng-model="track.name"/>
+        Country: <input type="text" ng-model="track.countryId"/><br/>
+        Length: <input type="text" ng-model="track.length" />
+        Width: <input type="text" ng-model="track.width" /><br/>
+        Turns: <input type="text" ng-model="track.turns" /><br/>
+        Latitude: <input type="text" ng-model="track.lat"/>
+        Longitude: <input type="text" ng-model="track.lng"/><br/>
+        <button class="btn" ng-click="reset()">Reset</button>
+        <button class="btn" ng-click="save()">Save</button>
+    </form>
+</div>

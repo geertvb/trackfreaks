@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <title>TrackFreaks.eu</title>
+    <link href="styles/bootstrap.min.css" rel="stylesheet">
+    <meta charset="UTF-8"/>
+    <meta http-equiv="Content-Language" content="en"/>
+</head>
+<body>
+
+<script src="vendor/jquery.js"></script>
+<script src="vendor/angular-1.0.7/angular.js"></script>
+<script src="vendor/angular-1.0.7/angular-resource.js"></script>
+<script src="vendor/ui-bootstrap.js"></script>
+<script src="scripts/app.js"></script>
+<script src="scripts/controllers/tracks.js"></script>
+
+<header class="navbar navbar-fixed-top" ng-controller="navCtrl">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="brand" href="#">TrackFreaks.eu</a>
+            <ul class="nav">
+                <li ng-class="{active: isActive('/tracks')}"><a ng-href="#/tracks">Tracks</a></li>
+                <li ng-class="{active: isActive('/organizations')}"><a ng-href="#/organizations">Organizations</a></li>
+                <li ng-class="{active: isActive('/riders')}"><a ng-href="#/riders">Riders</a></li>
+                <li ng-class="{active: isActive('/calendar')}"><a ng-href="#/calendar">Calendar</a></li>
+                <li ng-class="{active: isActive('/laptiming')}"><a ng-href="#/laptiming">Lap timing</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+<div style="margin: 48px;"></div>
+
+<div ng-view></div>
+</body>
+</html>
