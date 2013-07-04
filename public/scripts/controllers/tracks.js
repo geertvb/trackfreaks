@@ -8,6 +8,12 @@ function tracksCtrl($scope, $http, $resource, $dialog) {
 
     $scope.tracks = tracksResource.query();
 
+    $scope.mapOptions = {
+        center: new google.maps.LatLng(50.4448, 5.9683),
+        zoom: 14,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+
     $scope.countries = [
         {code: 'BE', label:'Belgium'},
         {code: 'FR', label:'France'},
