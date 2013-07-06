@@ -1,0 +1,19 @@
+{ "_id" : { "$oid" : "51d401c1bbb8ca7601000001" }, "name" : "Zolder", "countryId" : "BE", "lat" : "50.9923", "lng" : "5.2583", "length" : "4011", "turns" : "10" }
+{ "_id" : { "$oid" : "51d401e0bbb8ca7601000002" }, "name" : "Francorchamps", "countryId" : "BE", "lat" : "50.4448", "lng" : "5.9683" }
+{ "_id" : { "$oid" : "51d40226bbb8ca7601000003" }, "name" : "Mettet", "countryId" : "BE", "lat" : "50.30429", "lng" : "4.65760", "length" : "2280", "width" : "12" }
+{ "_id" : { "$oid" : "51d40266bbb8ca7601000004" }, "name" : "Zandvoort", "countryId" : "NL", "lat" : "52.3908", "lng" : "4.5416" }
+{ "_id" : { "$oid" : "51d4027fbbb8ca7601000005" }, "name" : "Assen", "countryId" : "NL", "lat" : "52.9622", "lng" : "6.5253" }
+{ "_id" : { "$oid" : "51d402f6bbb8ca7601000006" }, "name" : "Sachsenring", "countryId" : "DE", "lat" : "50.7937", "lng" : "12.6902" }
+{ "_id" : { "$oid" : "51d4030fbbb8ca7601000007" }, "name" : "Folembray", "countryId" : "FR", "lat" : "49.5454", "lng" : "3.2996", "length" : "2050" }
+{ "_id" : { "$oid" : "51d4031abbb8ca7601000008" }, "name" : "Croix-en-Ternois", "countryId" : "FR", "lat" : "50.3794", "lng" : "2.2977", "length" : "1900" }
+{ "_id" : { "$oid" : "51d4035abbb8ca7601000009" }, "name" : "Nürburgring - Nordschleife", "countryId" : "DE", "lat" : "50.33264", "lng" : "6.94070" }
+{ "_id" : { "$oid" : "51d4039fbbb8ca760100000a" }, "name" : "Nürburgring - GP-Strecke", "countryId" : "DE", "lat" : "50.33350", "lng" : "6.94552" }
+{ "_id" : { "$oid" : "51d403d9bbb8ca760100000b" }, "name" : "Silverstone", "countryId" : "UK", "lat" : "52.07373", "lng" : "-1.0147" }
+{ "_id" : { "$oid" : "51d403e5bbb8ca760100000c" }, "name" : "Brands Hatch", "countryId" : "UK", "lat" : "51.35742", "lng" : "0.2621" }
+{ "_id" : { "$oid" : "51d4042cbbb8ca760100000d" }, "name" : "Ecuyers", "countryId" : "FR", "lat" : "49.1088", "lng" : "3.5060", "length" : "3600" }
+{ "_id" : { "$oid" : "51d4047abbb8ca760100000e" }, "name" : "Hockenheimring", "countryId" : "DE", "lat" : "49.32667", "lng" : "8.57099" }
+{ "_id" : { "$oid" : "51d4049abbb8ca760100000f" }, "name" : "Carole", "countryId" : "FR", "lat" : "48.9797", "lng" : "2.5219" }
+{ "_id" : { "$oid" : "51d40543bbb8ca7601000010" }, "name" : "Le Mans", "countryId" : "FR", "lat" : "47.95645", "lng" : "0.2156" }
+{ "_id" : { "$oid" : "51d4058cbbb8ca7601000011" }, "name" : "Bilster Berg", "countryId" : "DE", "lat" : "51.79251", "lng" : "9.0647" }
+{ "name" : "Clastres", "countryId" : "FR", "length" : "1973", "lat" : "49.74889", "lng" : "3.21122", "_id" : { "$oid" : "51d415b5bbb8ca7601000013" } }
+{ "name" : "Mas-du-Clos", "countryId" : "FR", "length" : "3065", "lat" : "45.93406", "lng" : "2.30464", "_id" : { "$oid" : "51d416eebbb8ca7601000014" } }
