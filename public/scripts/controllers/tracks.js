@@ -8,11 +8,17 @@ function tracksCtrl($scope, $http, $resource, $dialog) {
 
     $scope.tracks = tracksResource.query();
 
+    $scope.markers = [];
+
     $scope.mapOptions = {
         center: new google.maps.LatLng(50.4448, 5.9683),
-        zoom: 14,
+        zoom: 5,
         mapTypeId: google.maps.MapTypeId.ROADMAP
     };
+
+    $scope.$watch('tracks', function() {
+        $scope.createMarkers();
+    }, true);
 
     $scope.countries = [
         {code: 'BE', label:'Belgium'},
@@ -21,6 +27,33 @@ function tracksCtrl($scope, $http, $resource, $dialog) {
         {code: 'DE', label:'Germany'},
         {code: 'UK', label:'United Kingdom'},
     ];
+
+    $scope.setCenter = function(lat, lng) {
+        var latLng = new google.maps.LatLng(lat, lng);
+        $scope.myMap.setCenter(latLng);
+    }
+
+    $scope.marker = function(lat, lng) {
+        var latLng = new google.maps.LatLng(lat, lng);
+        var marker = new google.maps.Marker({
+            position: latLng,
+            map: $scope.myMap
+        });
+        $scope.markers.push(marker);
+    }
+
+    $scope.createMarkers = function() {
+        var lm;
+        for (lm in $scope.markers) {
+            lm.setMap(null);
+        }
+        $scope.markers.length = 0;
+
+        var lt;
+        for (lt in $scope.tracks) {
+            $scope.marker($scope.tracks[lt].lat, $scope.tracks[lt].lng);
+        }
+    }
 
     $scope.selectTrack = function(trackId) {
         $scope.track = tracksResource.get({_id: trackId});

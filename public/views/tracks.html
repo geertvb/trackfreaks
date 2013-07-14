@@ -1,33 +1,90 @@
-<table>
-    <tr ng-repeat='track in tracks | orderBy:predicate'>
-        <td ng-click="selectTrack(track._id)">{{track.name}}</td>
-        <!--<td ng-click="selectTrack(track._id)">{{track.countryId}}</td>-->
-        <td><img width="26" height="17" ng-src="/images/countries/{{ track.countryId }}_flag.gif"></td>
-        <td>{{ track.length }}</td>
-        <td>{{ track.width }}</td>
-        <td>{{ track.turns }}</td>
-        <td>{{ track.lat | number:4 }}</td>
-        <td>{{ track.lng | number:4 }}</td>
-        <td><button ng-click="deleteTrack(track._id)" class="btn btn-mini">Delete</button></td>
-    </tr>
-</table>
+<div class="span6">
+    <table class="table table-condensed table-hover table-striped">
+        <tr ng-repeat='track in tracks | orderBy:predicate'>
+            <td ng-click="selectTrack(track._id)">{{track.name}}</td>
+            <!--<td ng-click="selectTrack(track._id)">{{track.countryId}}</td>-->
+            <td><img width="26" height="17" ng-src="/images/countries/{{ track.countryId }}_flag.gif"></td>
+            <td>{{ track.length }}</td>
+            <td>{{ track.width }}</td>
+            <td>{{ track.turns }}</td>
+            <!--
+            <td>{{ track.lat | number:4 }}</td>
+            <td>{{ track.lng | number:4 }}</td>
+            -->
+            <td>
+                <div class="btn-group btn-group-hover pull-right">
+                    <!--<a class="btn btn-mini" href="#"><i class="icon-plus"></i></a>-->
+                    <!--<a class="btn btn-mini" href="#"><i class="icon-edit"></i></a>-->
+                    <a class="btn btn-mini" ng-click="deleteTrack(track._id)"><i class="icon-remove"></i></a>
+                    <a class="btn btn-mini" ng-click="setCenter(track.lat, track.lng)"><i
+                            class="icon-screenshot"></i></a>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
 
-<div>
-    <form novalidate class="simple-form">
-        Name: <input type="text" ng-model="track.name"/>
-        Country: <!--<input type="text" ng-model="track.countryId"/><br/>-->
-        <select ng-model="track.countryId" ng-options="c.code as c.label for c in countries">
-            <option value="">-- choose country --</option>
-        </select><br/>
-        Length: <input type="text" ng-model="track.length" />
-        Width: <input type="text" ng-model="track.width" /><br/>
-        Turns: <input type="text" ng-model="track.turns" /><br/>
-        Latitude: <input type="text" ng-model="track.lat"/>
-        Longitude: <input type="text" ng-model="track.lng"/><br/>
-        <button class="btn" ng-click="reset()">Reset</button>
-        <button class="btn" ng-click="save()">Save</button>
+<div class="span6">
+    <form novalidate class="form-horizontal">
+        <fieldset>
+            <div class="control-group">
+                <label class="control-label" for="name">Name:</label>
+
+                <div class="controls">
+                    <input id="name" type="text" ng-model="track.name"/>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="country">Country:</label>
+
+                <div class="controls">
+                    <select id="country" ng-model="track.countryId" ng-options="c.code as c.label for c in countries">
+                        <option value="">-- choose country --</option>
+                    </select><br/>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="length">Length:</label>
+
+                <div class="controls">
+                    <input id="length" type="text" ng-model="track.length"/>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="width">Width:</label>
+
+                <div class="controls">
+                    <input id="width" type="text" ng-model="track.width"/>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="turns">Turns:</label>
+
+                <div class="controls">
+                    <input id="turns" type="text" ng-model="track.turns"/>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="lat">Latitude:</label>
+
+                <div class="controls">
+                    <input id="lat" type="text" ng-model="track.lat"/>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="lng">Longitude:</label>
+
+                <div class="controls">
+                    <input id="lng" type="text" ng-model="track.lng"/>
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button class="btn" ng-click="reset()">Reset</button>
+                <button class="btn" ng-click="save()">Save</button>
+            </div>
+        </fieldset>
     </form>
 </div>
 
-<div id="map_canvas" ui-map="myMap" class="span8 map" style="width: 640px; height: 480px" ui-options="mapOptions">
-</div>
+<div id="map_canvas" ui-map="myMap" class="span8 map" style="width: 640px; height: 480px" ui-options="mapOptions"></div>
