@@ -1,0 +1,7 @@
+.btn-group-hover {
+    visibility: hidden;
+}
+
+tr:hover .btn-group-hover {
+    visibility: visible;
+}
