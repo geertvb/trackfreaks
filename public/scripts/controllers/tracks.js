@@ -53,6 +53,7 @@ function tracksCtrl($scope, $http, $resource, $dialog) {
         for (lt in $scope.tracks) {
             $scope.marker($scope.tracks[lt].lat, $scope.tracks[lt].lng);
         }
+        $scope.fitMarkers();
     }
 
     $scope.selectTrack = function(trackId) {
@@ -81,6 +82,19 @@ function tracksCtrl($scope, $http, $resource, $dialog) {
             $scope.track = {};
         }
         $scope.tracks = tracksResource.query();
+    }
+
+    $scope.fitMarkers = function() {
+        if ($scope.tracks.length > 1) {
+            var bounds = new google.maps.LatLngBounds(
+                new google.maps.LatLng($scope.tracks[0].lat, $scope.tracks[0].lng),
+                new google.maps.LatLng($scope.tracks[1].lat, $scope.tracks[1].lng)
+            ) ;
+            for (var i=2; i<$scope.tracks.length; i++) {
+                bounds.extend(new google.maps.LatLng($scope.tracks[i].lat, $scope.tracks[i].lng));
+            }
+            $scope.myMap.fitBounds(bounds);
+        }
     }
 
 };
