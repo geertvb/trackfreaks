@@ -110,10 +110,15 @@ function tracksCtrl($scope, $http, $resource, $dialog) {
 
     $scope.fitMarkers = function() {
         if ($scope.tracks.length > 1) {
-            var bounds = new google.maps.LatLngBounds(
-                new google.maps.LatLng($scope.tracks[0].lat, $scope.tracks[0].lng),
-                new google.maps.LatLng($scope.tracks[1].lat, $scope.tracks[1].lng)
-            ) ;
+            var sw = new google.maps.LatLng(
+                Math.min($scope.tracks[0].lat, $scope.tracks[1].lat),
+                Math.min($scope.tracks[0].lng, $scope.tracks[1].lng)
+            );
+            var ne = new google.maps.LatLng(
+                Math.max($scope.tracks[0].lat, $scope.tracks[1].lat),
+                Math.max($scope.tracks[0].lng, $scope.tracks[1].lng)
+            );
+            var bounds = new google.maps.LatLngBounds(sw, ne);
             for (var i=2; i<$scope.tracks.length; i++) {
                 bounds.extend(new google.maps.LatLng($scope.tracks[i].lat, $scope.tracks[i].lng));
             }
