@@ -1,6 +1,10 @@
 function tracksCtrl($scope, $http, $resource, $dialog) {
 
     var tracksResource = $resource('/resources/tracks/:_id', {_id: '@_id'}, { update: { method: 'PUT' } });
+    var service = new google.maps.DirectionsService();
+
+    $scope.path = [];
+    $scope.poly;
 
     $scope.predicate = ['countryId','name'];
 
@@ -72,6 +76,26 @@ function tracksCtrl($scope, $http, $resource, $dialog) {
 
     $scope.reset = function() {
         $scope.track = {};
+    }
+
+    $scope.addMarker = function($event, $params) {
+        var latLng = $params[0].latLng;
+        if ($scope.path.length == 0) {
+            $scope.path.push(latLng);
+            $scope.poly = new google.maps.Polyline({ map: $scope.myMap });
+            $scope.poly.setPath($scope.path);
+        } else {
+            service.route({
+                origin: $scope.path[$scope.path.length - 1],
+                destination: latLng,
+                travelMode: google.maps.TravelMode.BICYCLING
+            }, function(result, status) {
+                if (status == google.maps.DirectionsStatus.OK) {
+                    $scope.path = $scope.path.concat(result.routes[0].overview_path);
+                    $scope.poly.setPath($scope.path);
+                }
+            });
+        }
     }
 
     $scope.save = function() {

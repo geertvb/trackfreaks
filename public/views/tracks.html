@@ -24,7 +24,8 @@
     </table>
 </div>
 
-<div id="map_canvas" ui-map="myMap" class="span6 map" style="width: 640px; height: 480px" ui-options="mapOptions"></div>
+<div id="map_canvas" ui-map="myMap" class="span6 map" style="width: 640px; height: 480px" ui-event="{'map-click': 'addMarker($event,$params)'}" ui-options="mapOptions"></div>
+        <!--  ui-event="{'map-click': 'addMarker($event)'}" -->
 <a class="btn btn-mini" ng-click="fitMarkers()"><i class="icon-fullscreen"></i></a>
 
 <div class="span6">
