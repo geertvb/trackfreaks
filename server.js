@@ -62,7 +62,8 @@ app.get('/login', function(req, res){
     res.sendfile(__dirname + '/public/login.html');
 });
 
-app.all('/*', ensureLoggedIn('/login'));
+app.all('/', ensureLoggedIn('/login'));
+app.all('/resources/*', ensureLoggedIn('/login'));
 
 app.get('/resources/tracks/:id', trackfreaks.findTrackById);
 app.put('/resources/tracks/:id', trackfreaks.updateTrack);
