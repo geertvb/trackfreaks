@@ -30,6 +30,9 @@ function tracksCtrl($scope, $http, $resource, $dialog) {
         {code: 'NL', label:'Netherlands'},
         {code: 'DE', label:'Germany'},
         {code: 'UK', label:'United Kingdom'},
+        {code: 'SP', label:'Spain'},
+        {code: 'IT', label:'Italy'},
+        {code: 'CZ', label:'Czech Republic'}
     ];
 
     $scope.setCenter = function(lat, lng) {
