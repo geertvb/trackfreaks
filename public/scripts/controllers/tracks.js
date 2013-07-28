@@ -31,6 +31,7 @@ function tracksCtrl($scope, $http, $resource, $dialog) {
         {code: 'DE', label:'Germany'},
         {code: 'UK', label:'United Kingdom'},
         {code: 'SP', label:'Spain'},
+        {code: 'PO', label:'Portugal'},
         {code: 'IT', label:'Italy'},
         {code: 'CZ', label:'Czech Republic'}
     ];
