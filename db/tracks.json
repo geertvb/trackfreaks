@@ -1,6 +1,6 @@
 { "_id" : { "$oid" : "51d401c1bbb8ca7601000001" }, "name" : "Zolder", "countryId" : "BE", "lat" : "50.9923", "lng" : "5.2583", "length" : "4011", "turns" : "10" }
-{ "_id" : { "$oid" : "51d401e0bbb8ca7601000002" }, "name" : "Francorchamps", "countryId" : "BE", "lat" : "50.4448", "lng" : "5.9683" }
-{ "_id" : { "$oid" : "51d40226bbb8ca7601000003" }, "name" : "Mettet", "countryId" : "BE", "lat" : "50.30429", "lng" : "4.65760", "length" : "2280", "width" : "12" }
+{ "_id" : { "$oid" : "51d401e0bbb8ca7601000002" }, "name" : "Francorchamps", "countryId" : "BE", "lat" : "50.436912", "lng" : "5.972053", "length" : "7000", "turns" : "20" }
+{ "_id" : { "$oid" : "51d40226bbb8ca7601000003" }, "name" : "Mettet", "countryId" : "BE", "lat" : "50.30076", "lng" : "4.65005", "length" : "2280", "width" : "12" }
 { "_id" : { "$oid" : "51d40266bbb8ca7601000004" }, "name" : "Zandvoort", "countryId" : "NL", "lat" : "52.3908", "lng" : "4.5416" }
 { "_id" : { "$oid" : "51d4027fbbb8ca7601000005" }, "name" : "Assen", "countryId" : "NL", "lat" : "52.9622", "lng" : "6.5253" }
 { "_id" : { "$oid" : "51d402f6bbb8ca7601000006" }, "name" : "Sachsenring", "countryId" : "DE", "lat" : "50.7937", "lng" : "12.6902" }
