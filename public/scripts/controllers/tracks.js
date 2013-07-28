@@ -35,6 +35,7 @@ function tracksCtrl($scope, $http, $resource, $dialog) {
     $scope.setCenter = function(lat, lng) {
         var latLng = new google.maps.LatLng(lat, lng);
         $scope.myMap.setCenter(latLng);
+        $scope.myMap.setZoom(14);
     }
 
     $scope.marker = function(lat, lng) {
